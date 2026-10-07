@@ -1,0 +1,1 @@
+kamp-setkinlik-sprint2.vercel.app
