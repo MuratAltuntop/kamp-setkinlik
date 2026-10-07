@@ -23,7 +23,7 @@ if (!event) {
         </figure>
 
         <div>
-            <h2>Etkinlik Künyesi</h2>
+            <h2>${event.title}</h2>
             <dl>
                 <dt><strong>Tarih</strong></dt>
                 <dd>${formattedDate}, ${event.time}</dd>
