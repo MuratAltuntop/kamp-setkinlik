@@ -1,4 +1,4 @@
-Canlı link: https://BURAYA-VERCEL-LINKINI-YAZ.vercel.app
+Canlı link: 
 
 # Kampüs Etkinlikleri · Sprint 4
 
