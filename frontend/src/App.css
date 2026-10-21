@@ -51,6 +51,7 @@ nav {
 /* VARSAYILAN: Masaüstü Geniş Ekran Görünümü (Kartlar Yan Yana) */
 .grid-container {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--bosluk-m);
 }
 
@@ -112,12 +113,13 @@ button {
     font-size: 1rem;
 }
 
-input:invalid, select:invalid, textarea:invalid {
+input:user-invalid, select:user-invalid, textarea:user-invalid {
     border-color: red;
 }
 
 /* MOBİL GÖRÜNÜM: Ekran 700px'den küçükse her şeyi alt alta diz */
 @media (max-width: 700px) {
+    .grid-container,
     .ana-sayfa-grid, 
     .tum-etkinlikler-grid, 
     .detay-grid,
