@@ -11,6 +11,7 @@
     --bosluk-m: 1rem;
     --bosluk-l: 2rem;
     --kose: 8px;
+    --renk-hata: hsl(0 65% 45%);
 }
 
 * {
@@ -51,12 +52,12 @@ nav {
 /* VARSAYILAN: Masaüstü Geniş Ekran Görünümü (Kartlar Yan Yana) */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--bosluk-m);
 }
 
 .ana-sayfa-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .tum-etkinlikler-grid {
@@ -296,7 +297,7 @@ article.detay {
     margin-bottom: var(--bosluk-s);
 }
 
-.detay-aciklama button {
+.detay-aciklama .buton {
     margin-right: var(--bosluk-s);
 }
 
@@ -314,5 +315,171 @@ article.detay {
             "kunye"
             "aciklama";
         grid-template-rows: auto;
+    }
+}
+
+/* ===== Sprint 6: Router, Context ve Yönetim ===== */
+
+.bolum-baslik {
+    margin-top: 0;
+}
+
+/* Link ve button için ortak düğme görünümü */
+.buton {
+    display: inline-block;
+    background-color: var(--renk-ana);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--kose);
+    margin-top: var(--bosluk-m);
+    margin-right: var(--bosluk-s);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.buton:hover {
+    text-decoration: none;
+    filter: brightness(1.1);
+}
+
+p > .buton {
+    margin-top: 0;
+}
+
+.buton-sil {
+    background-color: var(--renk-hata);
+}
+
+.buton-mor {
+    background-color: #6d3fc0;
+}
+
+.hata-metni {
+    display: block;
+    color: #c62828;
+    font-size: 0.85rem;
+    min-height: 1em;
+    width: 100%;
+}
+
+.mesaj {
+    padding: var(--bosluk-s) var(--bosluk-m);
+    border-radius: var(--kose);
+    width: auto;
+}
+
+.mesaj-basari {
+    border: 1px solid var(--renk-ana);
+    color: var(--renk-ana);
+    background-color: hsl(var(--ton) 40% 96%);
+}
+
+.auth-linkler {
+    display: flex;
+    gap: var(--bosluk-m);
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+.form {
+    margin-bottom: var(--bosluk-m);
+}
+
+/* Yönetim tablosu */
+.tablo {
+    width: min(1100px, 92%);
+    margin: var(--bosluk-m) auto 0;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tablo th,
+.tablo td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tablo th {
+    background: var(--renk-ana);
+    color: #fff;
+}
+
+.islemler {
+    display: flex;
+    gap: var(--bosluk-s);
+}
+
+.islemler .buton {
+    margin: 0;
+    padding: 6px 14px;
+}
+
+@media (max-width: 699px) {
+    .tablo thead {
+        display: none;
+    }
+
+    .tablo,
+    .tablo tbody {
+        display: block;
+    }
+
+    .tablo tr {
+        display: block;
+        border: 1px solid #ddd;
+        border-radius: var(--kose);
+        padding: var(--bosluk-s);
+        margin-bottom: var(--bosluk-m);
+    }
+
+    .tablo td {
+        display: block;
+        border-bottom: 0;
+        padding: 4px 0;
+    }
+
+    .tablo td[data-baslik]::before {
+        content: attr(data-baslik) ": ";
+        font-weight: 700;
+    }
+
+    .tablo td.islemler-hucre {
+        padding-top: var(--bosluk-s);
+    }
+}
+
+
+
+
+/* Başlık ve menü sola yaslı */
+.site-baslik h1,
+.site-baslik p {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: var(--bosluk-m);
+    padding-right: var(--bosluk-m);
+}
+
+.site-baslik p {
+    padding-bottom: var(--bosluk-s);
+}
+
+nav.menu {
+    padding-left: var(--bosluk-s);
+    padding-right: var(--bosluk-s);
+}
+
+/* Kartlar masaüstünde 3 sütun, filtre etiketleri koyu */
+.filtre label {
+    color: #222;
+}
+
+@media (max-width: 700px) {
+    .grid-container,
+    .ana-sayfa-grid {
+        grid-template-columns: 1fr;
     }
 }
