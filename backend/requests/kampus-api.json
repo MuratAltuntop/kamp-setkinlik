@@ -1,8 +1,10 @@
 {
   "info": {
     "name": "Kampüs API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "3 Tek etkinlik: eventId degiskenine GET /events listesinden bir _id yapistirin."
   },
+  "variable": [ { "key": "eventId", "value": "GET /events listesinden bir _id yapistir" } ],
   "item": [
     {
       "name": "1 Health",
@@ -48,7 +50,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/events/event-2",
+          "raw": "http://localhost:3000/events/{{eventId}}",
           "protocol": "http",
           "host": [
             "localhost"
@@ -56,7 +58,7 @@
           "port": "3000",
           "path": [
             "events",
-            "event-2"
+            "{{eventId}}"
           ]
         }
       },

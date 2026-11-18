@@ -1,11 +1,12 @@
-# Kampüs Etkinlik API (Sprint 7)
+# Kampüs Etkinlik API (Sprint 8)
 
 ## Çalıştırma
 
 ```bash
 cd backend
 npm install
-cp .env.example .env   # PORT değişkeni (varsayılan 3000)
+cp .env.example .env   # PORT ve MONGODB_URI (kendi Atlas adresini sadece .env'e yaz)
+npm run seed   # örnek 6 etkinliği veritabanına yazar (önce siler)
 npm run dev
 ```
 
